@@ -1,0 +1,34 @@
+{
+  "name": "wc3mapcodeeditor",
+  "version": "1.0.0",
+  "description": "Edit Wc3 lua code with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "preload": "tsc --build",
+    "load": "node index.ts load",
+    "presave": "tsc --build",
+    "save": "node index.ts save",
+    "pretranspile": "tsc --build",
+    "transpile": "node index.ts transpile",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rufreakde/Wc3MapCodeEditor.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "lua",
+    "w3m",
+    "Warcraft3"
+  ],
+  "author": "rufreakde",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/rufreakde/Wc3MapCodeEditor/issues"
+  },
+  "homepage": "https://github.com/rufreakde/Wc3MapCodeEditor#readme",
+  "dependencies": {
+    "wc3maptranslator": "^3.0.0"
+  }
+}
