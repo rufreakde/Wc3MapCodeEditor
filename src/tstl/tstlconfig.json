@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "lib": [
+            "esnext"
+        ],
+        "outDir": "src/lua",
+        "strict": true
+    },
+    "include": [
+        "src/typescript/**/*.ts"
+    ],
+    "tstl": {
+        "luaTarget": "JIT"
+    }
+}

@@ -4,12 +4,10 @@
   "description": "Edit Wc3 lua code with TypeScript",
   "main": "index.js",
   "scripts": {
-    "preload": "tsc --build",
-    "load": "node index.ts load",
-    "presave": "tsc --build",
-    "save": "node index.ts save",
-    "pretranspile": "tsc --build",
-    "transpile": "node index.ts transpile",
+    "load": "ts-node index.ts load",
+    "save": "ts-node index.ts save",
+    "pretranspile": "tstl -p src/typescript/tstlconfig.json --luaTarget JIT --strict false",
+    "transpile": "ts-node index.ts save",
     "test": "test"
   },
   "repository": {
@@ -29,6 +27,11 @@
   },
   "homepage": "https://github.com/rufreakde/Wc3MapCodeEditor#readme",
   "dependencies": {
-    "wc3maptranslator": "^3.0.0"
+    "wc3maptranslator": "^3.0.0",
+    "wc3mapworker": "file:../Wc3MapWorker"
+  },
+  "devDependencies": {
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   }
 }

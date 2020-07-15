@@ -5,38 +5,92 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "load",
             "type": "node",
             "request": "launch",
-            "name": "Launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "preLaunchTask": "build_ts",
-            "program": "${workspaceFolder}/index.js",
-            "stopOnEntry": false,
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Mocha",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "preLaunchTask": "build_ts",
-            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-            "stopOnEntry": false,
             "args": [
-                "test/**/*.js",
-                "--no-timeouts"
+                "${workspaceRoot}/index.ts"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
             ],
             "cwd": "${workspaceRoot}",
-            "runtimeExecutable": null,
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
             "env": {
-                "NODE_ENV": "testing"
+                "TS_NODE_IGNORE": "false",
+                "LOAD_MAP": "true",
+                "SAVE_MAP": "false",
+                "START_MAP_GAME": "false",
+                "START_MAP_EDITOR": "false"
             }
-        }
+        },
+        {
+            "name": "save",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${workspaceRoot}/index.ts"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "TS_NODE_IGNORE": "false",
+                "LOAD_MAP": "false",
+                "SAVE_MAP": "true",
+                "START_MAP_GAME": "false",
+                "START_MAP_EDITOR": "false"
+            }
+        },
+        {
+            "name": "game",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${workspaceRoot}/index.ts"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "TS_NODE_IGNORE": "false",
+                "LOAD_MAP": "false",
+                "SAVE_MAP": "false",
+                "START_MAP_GAME": "true",
+                "START_MAP_EDITOR": "false"
+            }
+        },
+        {
+            "name": "editor",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${workspaceRoot}/index.ts"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "TS_NODE_IGNORE": "false",
+                "LOAD_MAP": "false",
+                "SAVE_MAP": "false",
+                "START_MAP_GAME": "false",
+                "START_MAP_EDITOR": "true"
+            }
+        },
     ]
 }
